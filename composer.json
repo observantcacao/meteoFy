@@ -1,0 +1,19 @@
+{
+    "name": "loukianpltnv/meteo-fy",
+    "description": "an website that suggest you music based on the actual weather",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Loukianpltnv\\MeteoFy\\": "src/"
+        }
+    },
+    "minimum-stability": "beta",
+    "require": {
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.7",
+        "slim/php-view": "^3.4",
+        "nyholm/psr7": "^1.8",
+        "nyholm/psr7-server": "^1.1",
+        "monolog/monolog": "^3.8"
+    }
+}
