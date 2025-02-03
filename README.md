@@ -5,12 +5,13 @@ notre application utilise 2 Api
 l'Api spotify et une Api de météo
 - [API spotify](https://developer.spotify.com/documentation/web-api)
 - [Open Weather](https://openweathermap.org/)
-
+--
 après avoir fais le pull il faut faire :
-- composer update
-- composer dump
+ `composer update
+  composer dump`
 
-27.01.25 -> 03.02.25
+---
+### 27.01.25 -> 03.02.25
 nous avons pris l'idée de base et avons fais un bref debrief sur ce que nous voulions faire l'idée venais d'anciens élèves de 3ème années
 pour commencer nous avons créer:
 - un github
