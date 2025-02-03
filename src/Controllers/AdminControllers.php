@@ -9,17 +9,15 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Views\PhpRenderer;
 
 /**
- * Classe contrôleur pour gérer le site
+ * Classe contrôleur pour gérer les page admins
  */
-class SiteControllers
+class AdminControllers
 {
     public function home(Request $request, Response $response): Response
     {
         $dataLayout = ['title' => 'Home']; // Données pour le layout
         $phpView = new PhpRenderer(__DIR__ . '/../Views', $dataLayout); // Instancie le moteur de vue PHP
         $phpView->setLayout("Layout.php"); // Définit le fichier de layout
-        return $phpView->render($response, 'GenerateToken.php'); // Rend la vue Home.php
+        return $phpView->render($response, '/admin/Home.php'); // Rend la vue Home.php
     }
-
-
 }
