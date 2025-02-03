@@ -7,8 +7,9 @@ l'Api spotify et une Api de météo
 - [Open Weather](https://openweathermap.org/)
 --
 après avoir fais le pull il faut faire :
- `composer update  
-  composer dump`
+ `composer update`
+puis 
+  `composer dump`
 
 ---
 ### 27.01.25 -> 03.02.25
