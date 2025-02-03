@@ -7,7 +7,6 @@ l'Api spotify et une Api de météo
 - mettre lien Api météo
 
 après avoir fais le pull il faut faire :
-´´´
-composer update
-composer dump
-´´´
+- composer update
+- composer dump
+
