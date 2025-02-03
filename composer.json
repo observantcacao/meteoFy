@@ -4,7 +4,10 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Loukianpltnv\\MeteoFy\\": "src/"
+            "Controllers\\": "src/Controllers",
+            "Models\\": "src/Models",
+            "Views\\": "src/Views",
+		    "Interfaces\\":"src/Interfaces"
         }
     },
     "minimum-stability": "beta",

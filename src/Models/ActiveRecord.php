@@ -54,7 +54,7 @@ abstract class ActiveRecord
         $pdo = PDOSingleton::getInstance();
         $table = static::$table;        
         // Préparation de la requête pour récupérer tous les enregistrements
-        $stmt = $pdo->getConnection()->query("SELECT * FROM $table ");
+        $stmt = $pdo->getConnection()->query("SELECT * FROM $table");
         $datas = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $result = [];
         foreach ($datas as $row) {

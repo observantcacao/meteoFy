@@ -9,7 +9,7 @@ require __DIR__ .'/../../vendor/autoload.php';
 $app = AppFactory::create() ;
 
 // Ajouter le middleware de session
-$app->add(new SessionMiddleware());
+$app->add(new Models\SessionMiddleware());
 
 $app->addErrorMiddleware(true, true, true);
 
