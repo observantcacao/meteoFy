@@ -41,6 +41,12 @@
           <input class="form-control me-2" name="search" type="search" placeholder="rechercher un titre" aria-label="Search">
           <button class="btn btn-info" type="submit">chercher</button>
         </form>
+
+        <!--Pour la météo-->
+        <form class="d-flex mt-3" role="search" action="/meteo" method="get">
+          <input class="form-control me-2" name="search" type="search" placeholder="Météo d'une ville" aria-label="Search">
+          <button class="btn btn-info" type="submit">chercher</button>
+        </form>
       </div>
     </div>
   </div>
