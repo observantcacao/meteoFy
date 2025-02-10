@@ -1,6 +1,7 @@
 <?php
 use Controllers\AdminControllers;
 use Controllers\SiteControllers;
+use Controllers\SpotifyControllers;
 use Controllers\UserControllers;
 use Models\PDOSingleton;
 use Psr\Http\Message\ResponseInterface as Response;
@@ -9,8 +10,8 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 $app->get('/', [SiteControllers::class, 'home']);
 $app->get("/search",function ( Request $request , Response $response ) {$response->getBody()->write('<p>page ou les recherche seront afficher</p>'); return $response ; });
 
-$app->get("/generate",[AdminControllers::class, 'home']);
-
+$app->get("/generate",[SpotifyControllers::class, 'generateKey']);
+$app->get( '/searchTrack[/]', [SpotifyControllers::class, 'SearchTrack']);
 $app->get("/login",[UserControllers::class, 'LoginForm']);
 $app->get("/register",[UserControllers::class, 'RegisterForm']);
 $app->get("/logOut",function ( Request $request , Response $response ) {$response->getBody()->write('<p>deconexion</p>'); return $response ; });

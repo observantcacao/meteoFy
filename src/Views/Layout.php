@@ -37,8 +37,8 @@
           <!-- /ADMIN ONLY -->
 
         </ul>
-        <form class="d-flex mt-3" role="search" action="/search" method="get">
-          <input class="form-control me-2" type="search" placeholder="rechercher un titre" aria-label="Search">
+        <form class="d-flex mt-3" role="search" action="/searchTrack" method="get">
+          <input class="form-control me-2" name="search" type="search" placeholder="rechercher un titre" aria-label="Search">
           <button class="btn btn-info" type="submit">chercher</button>
         </form>
       </div>
