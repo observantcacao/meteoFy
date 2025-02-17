@@ -3,14 +3,14 @@
 namespace Controllers;
 
 use Exception;
+use Models\Alert;
+use Models\ARMeteo;
 use Models\ARSpotify;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Views\PhpRenderer;
 
-/**
- * Classe contrôleur pour gérer l'authentification et la recherche Spotify
- */
+
 class SpotifyControllers
 {
     private $clientId = '4de97f0d1f7c43c08cd74d482bf00dee';
@@ -75,6 +75,10 @@ class SpotifyControllers
     {
         $query = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_SPECIAL_CHARS);
       
+        if ($query == '') {
+            return $response->withHeader('Location', '/')->withStatus(302);
+            
+        }
         if (!isset($_SESSION['token'])) {
             return $response->withHeader('Location', '/login')->withStatus(302);
         }
@@ -98,5 +102,8 @@ class SpotifyControllers
     
         return $phpView->render($response, '/Spotitfy/search.php', $dataDetail);
     }
+    
+    
+    
     
 }

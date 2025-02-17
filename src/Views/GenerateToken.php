@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 
 // Spotify App credentials
 $clientId = '4de97f0d1f7c43c08cd74d482bf00dee';
@@ -55,4 +55,3 @@ if (isset($_GET['code'])) {
     header('Location: ' . $authUrl);
     exit;
 }
-?>
