@@ -44,7 +44,7 @@
 
         <!--Pour la météo-->
         <form class="d-flex mt-3" role="search" action="/meteo" method="get">
-          <input class="form-control me-2" name="search" type="search" placeholder="Météo d'une ville" aria-label="Search">
+          <input class="form-control me-2" type="text" name="ville" placeholder="Météo d'une ville" aria-label="Search">
           <button class="btn btn-info" type="submit">chercher</button>
         </form>
       </div>
