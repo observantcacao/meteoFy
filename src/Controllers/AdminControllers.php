@@ -11,6 +11,11 @@ class AdminControllers
 {
     public function home(Request $request, Response $response): Response
     {
+        if(!isset($_SESSION['username'])){
+            return $response
+                ->withHeader('Location', '/login')
+                ->withStatus(302);
+        }
         $dataLayout = ['title' => 'Home']; // Données pour le layout
         $phpView = new PhpRenderer(__DIR__ . '/../Views', $dataLayout); // Instancie le moteur de vue PHP
         $phpView->setLayout("Layout.php"); // Définit le fichier de layout

@@ -131,6 +131,7 @@ class SiteControllers
             "neige" => "cozy",
             "Légère pluie" => "relax",
             "Couvert" => "housse",
+            "Nuageux" => "cozy",
         ];
 
         $searchQuery = $weatherTracks[ucfirst($weatherCondition)];
