@@ -11,7 +11,7 @@ class PDOSingleton
     // Informations de connexion à la base de données (généralement déportées)
     private $host = 'localhost';
     private $db = 'NOMBDD'; // Remplacez par le nom de votre base de donn ées
-    private $user = 'PSEUDO'; // Remplacez par votre nom d' utilisateur MySQL
+    private $user = 'NOMUTILISATEUR'; // Remplacez par votre nom d' utilisateur MySQL
     private $pass = 'MOTDEPASSE'; // Remplacez par votre mot de passe MySQL
     private $charset = 'utf8mb4';
     // Constructeur privé pour empêcher la création d'instances directement

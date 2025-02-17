@@ -12,6 +12,6 @@
             <button type="submit" class="btn btn-primary w-100">Se connecter</button>
         </form>
         <div class="text-center mt-3">
-            <a href="/register">creer un compte</a>
+          
         </div>
 </div>

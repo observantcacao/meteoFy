@@ -3,7 +3,7 @@
         'name' => 'loukianpltnv/meteo-fy',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '7ed835404a2ffbf2d9a77fe55aeee30dbf447980',
+        'reference' => '8402211ff581a2037e14ad11030eec247728f8bc',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'loukianpltnv/meteo-fy' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '7ed835404a2ffbf2d9a77fe55aeee30dbf447980',
+            'reference' => '8402211ff581a2037e14ad11030eec247728f8bc',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
