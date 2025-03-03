@@ -8,13 +8,13 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 $app->get('/', [SiteControllers::class, 'home']);
-$app->get("/search",function ( Request $request , Response $response ) {$response->getBody()->write('<p>page ou les recherche seront afficher</p>'); return $response ; });
+$app->get("/searchTrack",[SpotifyControllers::class, 'searchTrack']);
 
 $app->get("/generate",[SpotifyControllers::class, 'generateKey']);
-
+$app->get("/callback",[SpotifyControllers::class, 'callback']);
 $app->get("/login",[UserControllers::class, 'LoginForm']);
 $app->get("/register",[UserControllers::class, 'RegisterForm']);
-$app->get("/logOut",[UserControllers::class, 'logOut']);
+$app->get("/logout",[UserControllers::class, 'LogOut']);
 $app->post("/loginPost",[UserControllers::class, 'loginPost']);
 $app->post("/registerPost",[UserControllers::class, 'RegisterPost']);
 

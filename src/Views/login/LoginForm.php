@@ -1,3 +1,6 @@
+<?php
+
+?>
 <div class="container text-center mt-5 bg-dark">
         <h3 class="text-center mb-4">Connexion</h3>
         <form action="/loginPost" method="post">

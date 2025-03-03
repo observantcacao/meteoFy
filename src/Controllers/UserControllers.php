@@ -10,11 +10,11 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Views\PhpRenderer;
 use Models\Alert;
 use Models\ARUser;
-
 /**
  * Classe contrôleur pour gérer le site
  */
 class UserControllers{
+private int $nbrErreur = 0;
 
     public function LoginForm(Request $request, Response $response): Response
     {
@@ -32,7 +32,14 @@ class UserControllers{
 
         if (ARUser::isValid($pseudo, $password)) {
             Alert::add('success', 'L\'utilisateur a été identifié');
+            ActLogger::log('Information : un utilisateur s\'est connecté : '.$pseudo,'info');
         }  else {
+            if ($this->nbrErreur >= 3) {
+                ActLogger::log('CRITICAL : L\'utilisateur '.$pseudo.' tente de rentrer sur le compte (+ de 3 erreur au mot de passe) ','warning');
+            }else{
+                ActLogger::log('Erreur : échec lors de la connexion pour '.$pseudo,'warning');
+                $this->nbrErreur ++;
+            }
             Alert::add('danger', 'Username et/ou password inconnus !');
             return $response
                 ->withHeader('Location', '/login')
@@ -45,6 +52,7 @@ class UserControllers{
     }
 
     public function logOut(Request $request, Response $response): Response{
+        ActLogger::log('Information : L\'utilisaeur '.$_SESSION['username'].' s\'est déconnecté','info');
         unset($_SESSION['username']);
         Alert::add('success', 'Utilisateur déconnecté');
         return $response

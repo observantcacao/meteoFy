@@ -4,7 +4,7 @@
 // Spotify App credentials
 $clientId = '4de97f0d1f7c43c08cd74d482bf00dee';
 $clientSecret = '134f9146d040440bbdbc561ccde31e35';
-$redirectUri = 'http://meteofy/';
+$redirectUri = 'http://meteofy.loc/';
 
 // URL d'authentification
 $authUrl = 'https://accounts.spotify.com/authorize?' . http_build_query([

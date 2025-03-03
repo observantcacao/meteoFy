@@ -1,0 +1,25 @@
+{"message":"SQLSTATE[HY000] [1049] Unknown database 'meteoFy'","context":{},"level":400,"level_name":"ERROR","channel":"logMeteoFy","datetime":"2025-03-03T12:47:13.565405+00:00","extra":{}}
+{"message":"Information : L'utilisaeur  s'est déconnecté : ","context":{},"level":200,"level_name":"INFO","channel":"logMeteoFy","datetime":"2025-03-03T12:59:10.750606+00:00","extra":{}}
+{"message":"Information : L'utilisaeur  s'est déconnecté : ","context":{},"level":200,"level_name":"INFO","channel":"logMeteoFy","datetime":"2025-03-03T13:00:05.876890+00:00","extra":{}}
+{"message":"Information : L'utilisaeur  s'est déconnecté : ","context":{},"level":200,"level_name":"INFO","channel":"logMeteoFy","datetime":"2025-03-03T13:00:31.318334+00:00","extra":{}}
+{"message":"Information : L'utilisaeur  s'est déconnecté : ","context":{},"level":200,"level_name":"INFO","channel":"logMeteoFy","datetime":"2025-03-03T13:01:04.002880+00:00","extra":{}}
+{"message":"Information : un utilisateur s'est connecté : test","context":{},"level":200,"level_name":"INFO","channel":"logMeteoFy","datetime":"2025-03-03T13:02:39.518322+00:00","extra":{}}
+{"message":"Information : L'utilisaeur test s'est déconnecté : ","context":{},"level":200,"level_name":"INFO","channel":"logMeteoFy","datetime":"2025-03-03T13:02:57.364436+00:00","extra":{}}
+{"message":"Erreur : échec lors de la connexion","context":{},"level":300,"level_name":"WARNING","channel":"logMeteoFy","datetime":"2025-03-03T13:03:07.190034+00:00","extra":{}}
+{"message":"Information : un utilisateur s'est connecté : test1","context":{},"level":200,"level_name":"INFO","channel":"logMeteoFy","datetime":"2025-03-03T13:03:12.924221+00:00","extra":{}}
+{"message":"Bad search type field invalid_type","context":{},"level":550,"level_name":"ALERT","channel":"logMeteoFy","datetime":"2025-03-03T13:05:11.908177+00:00","extra":{}}
+{"message":"Bad search type field invalid_type","context":{},"level":550,"level_name":"ALERT","channel":"logMeteoFy","datetime":"2025-03-03T13:05:15.983378+00:00","extra":{}}
+{"message":"Information : un utilisateur s'est connecté : test","context":{},"level":200,"level_name":"INFO","channel":"logMeteoFy","datetime":"2025-03-03T13:05:23.556414+00:00","extra":{}}
+{"message":"Information : un utilisateur s'est connecté : test1","context":{},"level":200,"level_name":"INFO","channel":"logMeteoFy","datetime":"2025-03-03T13:53:33.105177+00:00","extra":{}}
+{"message":"Information : L'Api Spotify n'a aucun soucis","context":{},"level":200,"level_name":"INFO","channel":"logMeteoFy","datetime":"2025-03-03T13:59:48.965356+00:00","extra":{}}
+{"message":"Information : L'Api Meteo n'a aucun soucis","context":{},"level":200,"level_name":"INFO","channel":"logMeteoFy","datetime":"2025-03-03T13:59:49.102155+00:00","extra":{}}
+{"message":"Information : L'utilisaeur test1 s'est déconnecté","context":{},"level":200,"level_name":"INFO","channel":"logMeteoFy","datetime":"2025-03-03T14:09:30.114581+00:00","extra":{}}
+{"message":"Erreur : échec lors de la connexion pour test1","context":{},"level":300,"level_name":"WARNING","channel":"logMeteoFy","datetime":"2025-03-03T14:22:32.471516+00:00","extra":{}}
+{"message":"Erreur : échec lors de la connexion pour test1","context":{},"level":300,"level_name":"WARNING","channel":"logMeteoFy","datetime":"2025-03-03T14:22:37.405976+00:00","extra":{}}
+{"message":"Erreur : échec lors de la connexion pour test1","context":{},"level":300,"level_name":"WARNING","channel":"logMeteoFy","datetime":"2025-03-03T14:22:41.877056+00:00","extra":{}}
+{"message":"Erreur : échec lors de la connexion pour test1","context":{},"level":300,"level_name":"WARNING","channel":"logMeteoFy","datetime":"2025-03-03T14:22:46.468448+00:00","extra":{}}
+{"message":"Information : un utilisateur s'est connecté : test1","context":{},"level":200,"level_name":"INFO","channel":"logMeteoFy","datetime":"2025-03-03T14:22:51.588382+00:00","extra":{}}
+{"message":"Information : Recherche faite : popopo","context":{},"level":200,"level_name":"INFO","channel":"logMeteoFy","datetime":"2025-03-03T14:28:58.019137+00:00","extra":{}}
+{"message":"Information : L'utilisaeur test1 s'est déconnecté","context":{},"level":200,"level_name":"INFO","channel":"logMeteoFy","datetime":"2025-03-03T14:45:12.336684+00:00","extra":{}}
+{"message":"Erreur : échec lors de la connexion pour test1","context":{},"level":300,"level_name":"WARNING","channel":"logMeteoFy","datetime":"2025-03-03T14:45:27.276755+00:00","extra":{}}
+{"message":"Erreur : échec lors de la connexion pour test1","context":{},"level":300,"level_name":"WARNING","channel":"logMeteoFy","datetime":"2025-03-03T14:46:05.575633+00:00","extra":{}}

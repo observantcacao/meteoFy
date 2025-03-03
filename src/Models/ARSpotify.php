@@ -32,7 +32,7 @@ class ARSpotify
 
         // Construire l'URL avec la requête encodée
         $url = "https://api.spotify.com/v1/search?q={$encoded_query}&type=track,playlist&limit=10";
-
+        //$url = "https://api.spotify.com/v1/search?q=!!!&type=invalid_type";
         // Configuration de l'appel API avec cURL
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);

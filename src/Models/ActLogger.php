@@ -43,8 +43,10 @@ class ActLogger
             }
 
             $logger = new Logger("logMeteoFy");
+
             $stream_handler = new StreamHandler(__DIR__ . "/../log/logMeteoFy.log");
             $formatter = new JsonFormatter();
+
             $stream_handler->setFormatter($formatter);
             $logger->pushHandler($stream_handler);
 
