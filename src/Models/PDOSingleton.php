@@ -3,6 +3,7 @@ namespace Models;
 
 use PDO;
 use PDOException;
+use Models\ActLogger;
 
 class PDOSingleton
 {
@@ -26,6 +27,7 @@ class PDOSingleton
         try {
             $this->pdo = new PDO($dsn, $this->user, $this->pass, $options);
         } catch (PDOException $e) {
+            ActLogger::log($e->getMessage(),"error");
             throw new PDOException($e->getMessage(), (int)$e->getCode());
         }
     }
