@@ -22,7 +22,7 @@ class SiteControllers
         $weatherData = $meteo->searchWeather($query);
         
         if (!isset($_SESSION['token'])) {
-           return $response->withHeader('Location', '/generateKey')->withStatus(302);
+           return $response->withHeader('Location', '/generate')->withStatus(302);
         }
 
         $spotify = new ARSpotify($_SESSION['token']);
@@ -47,6 +47,9 @@ class SiteControllers
             "neige" => "cozy",
             "Légère pluie" => "relax",
             "Couvert" => "housse",
+            "Nuageux" => "cozy",
+            "Partiellement nuageux" => "cozy",
+            "Légères chutes de neige" => "phonk"
         ];
 
         $searchQuery = $weatherTracks[ucfirst($weatherCondition)];

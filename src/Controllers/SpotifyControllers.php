@@ -88,7 +88,7 @@ class SpotifyControllers
      
         $testResponse = $spotify->SearchTrack("test");
         
-        if (isset($testResponse['error']) && $testResponse['error']['status'] == 401) {
+        if (isset($testResponse['error'])) {
             unset($_SESSION['token']);
             return $response->withHeader('Location', '/login')->withStatus(302);
         }

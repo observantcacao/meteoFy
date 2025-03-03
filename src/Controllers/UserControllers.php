@@ -33,25 +33,8 @@ class UserControllers{
 
     public function RegisterPost(Request $request, Response $response): Response
     {
-        try {
-            
-            $body = $request->getParsedBody();
-            $pseudo = $body['pseudo'];
-            $password = password_hash($body['password'],PASSWORD_DEFAULT);
-            
-            $utilisateur = new ARUser();
-            $utilisateur->hashPassword = $password;
-            $utilisateur->pseudo = $pseudo;
-            $utilisateur->create();
-            if (ARUser::isValid($pseudo, $password)) {
-                Alert::add('success', 'L\'utilisateur a été ajouté');
-        } 
-        } catch (\Throwable $th) {
-            Alert::add('warning',"nom d'utilisateur deja pris");
-            return $response
-            ->withHeader('Location', '/register')
-            ->withStatus(302);
-        }
+       
+    
             
         return $response
             ->withHeader('Location', '/')
@@ -60,22 +43,7 @@ class UserControllers{
 
     public function LoginPost(Request $request, Response $response): Response
     {
-        $body = $request->getParsedBody();
-        $pseudo = $body['pseudo'];
-        $password = password_hash($body['password'],);
-
-        Alert::add("warning",$pseudo);
-        Alert::add("warning",$password);
-        if (ARUser::isValid($pseudo, $password)) {
-            Alert::add('success', 'L\'utilisateur a été identifié');
-
-        } else {
-            Alert::add('danger', 'Username et/ou password inconnus !');
-            return $response
-                ->withHeader('Location', '/login')
-                ->withStatus(302); // 302 pour une redirection temporaire 
-        }
-        $_SESSION['user_connected'] = ARUser::findIDViaUser($pseudo)->id;
+       
         return $response
             ->withHeader('Location', '/')
             ->withStatus(302); // 302 pour une redirection temporaire 

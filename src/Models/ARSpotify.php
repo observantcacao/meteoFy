@@ -31,30 +31,49 @@ class ARSpotify
 
         // Construire l'URL avec la requête encodée
         $url = "https://api.spotify.com/v1/search?q={$encoded_query}&type=track,playlist&limit=10";
-
-        // Configuration de l'appel API avec cURL
+        //$url = "https://api.spotify.com/v1/search?q=!!!&type=invalid_type";
+        //$url = "https://10.255.255.1";
         curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 1);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Authorization: Bearer ' .  $this->access_token
+            'Authorization: Bearer ' . $this->access_token
         ));
-
+    
         $response = curl_exec($ch);
-        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE); // Récupérer le code HTTP
+        
+        // Vérifier si une erreur cURL s'est produite
+        if (curl_errno($ch)) {
+            $curl_error = curl_error($ch);
+            curl_close($ch);
+            return ["error" => "Erreur cURL : " . $curl_error];
+        }
+    
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
-
+        
+        if (!$response) {
+        
+            return ["error" => "Aucune réponse du serveur (timeout ou connexion refusée)."];
+        }
+    
         // Vérifier si la réponse est JSON valide
         $data = json_decode($response, true);
-
+        if (!$data) {
+            return ["error" => "Réponse invalide (non JSON)"];
+        }
+    
         // Vérifier si le token est invalide ou expiré
         if ($http_code == 401) {
             return ["error" => "Le token d'accès est invalide ou expiré. Veuillez le renouveler."];
         }
-
+    
         if (isset($data['error'])) {
+            
             return ["error" => "Erreur Spotify : " . $data['error']['message']];
+           
         }
-
+    
         return $data;
     }
 
