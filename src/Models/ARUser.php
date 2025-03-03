@@ -74,7 +74,10 @@ class ARUser extends ActiveRecord implements IActiveRecord
             'hashPassword' => $this->hashPassword, // Hash sécurisé du mot de passe
             'admin' => $this->admin,
         ]);
-
+        $_SESSION['user_connected'] = [
+            'id' => $this->id,
+            'admin' => $this->admin,
+        ];
         // Récupère le dernier ID inséré et l'assigne à l'objet
         $this->id = $this->pdoConnection->lastInsertId();
     }
@@ -86,7 +89,7 @@ class ARUser extends ActiveRecord implements IActiveRecord
      */
     public function update()
     {
-        $sql = "UPDATE " . static::$table . " SET pseudo = :pseudo, password = :password, is_admin = :is_admin WHERE id = :id;";
+        $sql = "UPDATE " . static::$table . " SET pseudo = :pseudo, password = :password, admin = :admin WHERE id = :id;";
         $this->executeQuery($sql, [
             'pseudo' => $this->pseudo,
             'hashPassword' => password_hash($this->hashPassword, PASSWORD_DEFAULT), // Hash sécurisé du mot de passe
@@ -108,7 +111,7 @@ class ARUser extends ActiveRecord implements IActiveRecord
         $this->executeQuery($sql, ['id' => $this->id]);
     }
 
-    public static function isValid($pseudo, $hashPassword): bool
+   public static function isValid($pseudo, $password): bool
     {
         $pdoInstance = PDOSingleton::getInstance();
         $sql = "SELECT * FROM " . static::$table . " WHERE pseudo = :pseudo;";
@@ -119,8 +122,7 @@ class ARUser extends ActiveRecord implements IActiveRecord
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         // Vérifie le mot de passe
-        Alert::add("danger",var_dump($user));
-        if ($user && $hashPassword == $user['hashPassword']) {
+        if ($user && password_verify($password, $user['hashPassword'])) {
             // Initialise la session utilisateur
             $_SESSION['user_connected'] = [
                 'id' => $user['id'],
@@ -151,12 +153,4 @@ class ARUser extends ActiveRecord implements IActiveRecord
         return null;
     }
 
-    public static function isAdmin($id)
-    {
-        $user = parent::find($id);
-        if ($user->admin == 0) {
-            return false;
-        }
-        return true;
-    }
 }
