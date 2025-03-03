@@ -4,6 +4,7 @@ namespace Controllers;
 
 // Import des classes nécessaires
 use Exception;
+use Models\ActLogger;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Views\PhpRenderer;
@@ -22,10 +23,10 @@ class UserControllers{
         $phpView->setLayout("Layout.php"); // Définit le fichier de layout
         return $phpView->render($response, '/login/LoginForm.php'); // Rend la vue Home.php
     }
+
     public function LoginPost(Request $request, Response $response): Response
     {
         $body = $request->getParsedBody();
-
         $pseudo = $body['pseudo'];
         $password = $body['password'];
 
